@@ -1,5 +1,5 @@
 arr = list(map(int, input().split()))
-def equal_pairs(arr):
+def equal_pairs(arr):#Если два элемента равны, она увеличивает счетчик s. 
     s=0
     for i in range(len(arr)):
         for j in range(i+1,len(arr)):
@@ -7,5 +7,4 @@ def equal_pairs(arr):
                 s += 1
     return s
 
-count=equal_pairs(arr)
-print(count)
+print(equal_pairs(arr))
