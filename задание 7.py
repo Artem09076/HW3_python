@@ -1,10 +1,10 @@
 s=str(input())
 letter="f"
 def find_indices(s, letter, offset=0):
-    if len(s) == 0:
+    if len(s) == 0:#Это на случай если мы вводим пустую строку
         return []
-    elif s[0] == letter:
+    elif s[0] == letter:#Если первым символом входной строки s является заданная буква, она добавляет текущее значение смещения в список результатов и рекурсивно вызывает саму себя с оставшейся строкой s[1:] и обновленным значением смещения, равным offset+1.
         return [offset] + find_indices(s[1:], letter, offset+1)
     else:
-        return find_indices(s[1:], letter, offset+1)
+        return find_indices(s[1:], letter, offset+1)#Если первый символ входной строки s не является заданной буквой, функция просто рекурсивно вызывает саму себя с оставшейся строкой s[1:] и обновленным значением смещения, равным offset+1.
 print(*find_indices(s, letter, offset=0))
